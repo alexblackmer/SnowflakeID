@@ -1,4 +1,14 @@
 #!/bin/bash
 
-srun --nodes=1 --ntasks=14 --partition=kingspeak-gpu-guest --account=owner-gpu-guest --gres=gpu:p100:1      --time=24:00:00 --mem=28GB --pty /bin/bash -l
+#SBATCH --nodes=1
+#SBATCH --ntasks=2
+#SBATCH --partition=kingspeak-gpu-guest
+#SBATCH --account=owner-gpu-guest
+#SBATCH --gres=gpu:p100:2
+#SBATCH --time=2:00:00
+#SBATCH --mem=0
+#SBATCH --pty /bin/bash -l
+
+salloc -n 16 -N 1 -t 2:00:00 -p kingspeak-gpu-guest -A owner-gpu-guest --gres=gpu:p100:2 --mem=0
+
 

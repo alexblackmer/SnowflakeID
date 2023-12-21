@@ -1,5 +1,4 @@
 #!/bin/bash
 
-module load miniconda3/latest 
+source ~/software/pkg/miniconda3/etc/profile.d/conda.sh
 conda activate tf
-
